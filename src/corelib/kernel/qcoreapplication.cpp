@@ -670,6 +670,7 @@ QCoreApplication::QCoreApplication(int &argc, char **argv)
     : QObject(*new QCoreApplicationPrivate(argc, argv, 0x040000))
 {
     init();
+	printf("%s\n", __FUNCTION__);
     QCoreApplicationPrivate::eventDispatcher->startingUp();
 #if defined(Q_OS_SYMBIAN) && !defined(QT_NO_LIBRARY)
     // Refresh factoryloader, as text codecs are requested during lib path
