@@ -1,6 +1,10 @@
 @echo off
 
+color fc
+
 call "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\vcvars32.bat"
+
+:loop
 
 echo    --------------------------------
 echo    -  (q)	quit
@@ -18,14 +22,14 @@ if errorlevel 1 goto quit
 	
 :all
 	configure -opensource -confirm-license -debug -shared -fast -no-qt3support && nmake -nologo
-	goto quit
+	goto loop
 
 :build
 	nmake -nologo
-	goto quit
+	goto loop
 	
 :configure
 	configure -opensource -confirm-license -debug -shared -fast -no-qt3support
-	goto quit
+	goto loop
 	
 :quit
