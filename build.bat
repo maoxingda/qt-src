@@ -1,0 +1,1 @@
+configure -opensource -confirm-license -debug -shared -fast -nomake tests  -nomake examples -nomake activeqt -nomake phonon -nomake demos -nomake tools -nomake webkit -nomake imports
