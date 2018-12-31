@@ -1,6 +1,6 @@
 @echo off
 
-color fc
+color 0b
 
 call "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\vcvars32.bat"
 
@@ -29,7 +29,7 @@ if errorlevel 1 goto quit
 	goto loop
 	
 :configure
-	configure -opensource -confirm-license -debug -shared -fast -no-qt3support
+	configure -opensource -confirm-license -debug -shared -fast -no-qt3support -vcproj
 	goto loop
 	
 :quit
