@@ -13,7 +13,7 @@ if errorlevel 2 goto configure
 if errorlevel 1 goto build
 	
 :all
-	configure -opensource -confirm-license -debug -shared -fast -no-qt3support && jom -j 4
+	configure -opensource -confirm-license -debug -shared -fast -no-qt3support && jom -l -j 4
 	goto quit
 
 :build
