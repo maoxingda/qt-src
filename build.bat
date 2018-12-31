@@ -1,9 +1,27 @@
-@if %1 == ? (echo on)
+@echo off
 
-@if %1 == b  (jom -j 4)
+echo    (1)	build
+echo    (2)	configure
+echo    (3)	configure and build
+echo    (4)	quit
 
-@if %1 == c  (configure -opensource -confirm-license -debug -shared -fast -no-qt3support)
+choice /n /c 1234 /m "Please select"
 
-@if %1 == cb (configure -opensource -confirm-license -debug -shared -fast -no-qt3support && jom -j 4)
+if errorlevel 4 goto quit
+if errorlevel 3 goto all
+if errorlevel 2 goto configure
+if errorlevel 1 goto build
+	
+:all
+	configure -opensource -confirm-license -debug -shared -fast -no-qt3support && jom -j 4
+	goto quit
 
-@rem -no-3dnow -no-openssl -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-script -no-scripttools -no-webkit -no-directwrite -no-nis -no-cups -no-iconv -no-neon -no-fontconfig -no-opengl -no-xmlpatterns
+:build
+	jom -j 4
+	goto quit
+	
+:configure
+	configure -opensource -confirm-license -debug -shared -fast -no-qt3support
+	goto quit
+	
+:quit
