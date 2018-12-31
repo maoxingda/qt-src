@@ -1,1 +1,1 @@
-configure -opensource -confirm-license -debug -shared -fast -nomake tests  -nomake examples -nomake activeqt -nomake phonon -nomake demos -nomake tools -nomake webkit -nomake imports
+configure -opensource -confirm-license -debug -shared -fast -no-qt3support -no-3dnow -no-openssl -no-dbus -no-phonon -no-phonon-backend -no-multimedia -no-audio-backend -no-script -no-scripttools -no-webkit -no-directwrite -no-nis -no-cups -no-iconv -no-neon -no-fontconfig -nomake examples -nomake tests -nomake tools -nomake demos
