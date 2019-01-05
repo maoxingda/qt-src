@@ -1,7 +1,7 @@
 @echo off
 
 color 0b
-title %cd%(%time%)
+title %0----(%time%)
 
 call "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\vcvars32.bat"
 
